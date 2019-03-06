@@ -17,6 +17,6 @@
 
     <!--<nacos:global-properties server-addr="${nacos.config.server-addr}" />-->
 
-    <nacos:property-source data-id="example" auto-refreshed="true" />
+    <nacos:property-source data-id="${some-data-id}" auto-refreshed="true" />
 
 </beans>
