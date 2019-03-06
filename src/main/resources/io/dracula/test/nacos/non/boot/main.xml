@@ -2,13 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:nacos="http://nacos.io/schema/nacos"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd ">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://nacos.io/schema/nacos http://nacos.io/schema/nacos.xsd">
 
     <context:annotation-config />
 
     <bean class="io.dracula.test.nacos.non.boot.MyConfig" />
+
+    <nacos:annotation-driven />
+
+    <nacos:global-properties server-addr="localhost:8848" />
+
+    <nacos:property-source data-id="example" auto-refreshed="true" />
 
 </beans>
